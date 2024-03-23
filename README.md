@@ -1,5 +1,6 @@
 # React-Crash-Course-Notes-App
-React Crash Course Notes App
+React Crash Course Notes App by Dennis Ivy
+![](./mynotes/src/logo.svg)
 
 To create project run 
 ```
