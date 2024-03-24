@@ -5,10 +5,8 @@ import Listitem from '../components/Listitem';
 function NotesPage() {
   return (
     <div>
-      {notes.map((note) => (
-        <p>
-          <Listitem note={note} />
-        </p>
+      {notes.map((note, index) => (
+        <Listitem key={index} note={note} />
       ))}
     </div>
   );
