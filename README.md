@@ -1,11 +1,5 @@
 # React-Crash-Course-Notes-App
 React Crash Course Notes App by Dennis Ivy
-![](./mynotes/src/logo.svg)
+![](./mynotes/src/assets/readme/notes.PNG)
 
-To create project run 
-```
- npx create-react-app mynotes
- ```
-
- CD into the new folder then run npm start
  
