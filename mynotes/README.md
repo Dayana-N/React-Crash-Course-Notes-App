@@ -73,3 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Then, you can run the command and select the port using the following command:
 npx json-server --watch -p 3333 server.json
 Change 3333 to the port number you want and replace server.json with the name of your fake api.
+
+### `npm run build`
