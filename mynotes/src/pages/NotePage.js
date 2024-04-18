@@ -14,6 +14,7 @@ function NotePage({ match, history }) {
   // let note = notes.find((note) => note.id == noteId);
 
   let getNote = async () => {
+    if (noteId === 'new') return;
     let response = await fetch(
       `https://3333-dayanan-reactcrashcours-3baf0y6xed8.ws-eu110.gitpod.io/notes/${noteId}`
     );
@@ -26,6 +27,19 @@ function NotePage({ match, history }) {
       `https://3333-dayanan-reactcrashcours-3baf0y6xed8.ws-eu110.gitpod.io/notes/${noteId}`,
       {
         method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...note, updated: new Date() }),
+      }
+    );
+  };
+
+  let createteNote = async () => {
+    await fetch(
+      `https://3333-dayanan-reactcrashcours-3baf0y6xed8.ws-eu110.gitpod.io/notes/`,
+      {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -53,8 +67,10 @@ function NotePage({ match, history }) {
       deleteNote();
     } else if (noteId !== 'new') {
       updateNote();
+    } else if (noteId === 'new' && note !== null) {
+      createteNote();
     }
-    updateNote();
+
     history.push('/');
   };
 
@@ -69,7 +85,7 @@ function NotePage({ match, history }) {
         {noteId !== 'new' ? (
           <button onClick={deleteNote}>Delete</button>
         ) : (
-          <button>Done</button>
+          <button onClick={handleSubmit}>Done</button>
         )}
       </div>
 

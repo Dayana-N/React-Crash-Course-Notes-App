@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import notes from '../assets/data';
 import Listitem from '../components/Listitem';
+import AddButton from '../components/AddButton';
 
 function NotesPage() {
   let [notes, setNotes] = useState([]);
@@ -28,6 +29,7 @@ function NotesPage() {
           <Listitem key={index} note={note} />
         ))}
       </div>
+      <AddButton />
     </div>
   );
 }
